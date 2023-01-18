@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<robot name="my_robot">
+
+<material name="darkcyan">
+        <color rgba="0.0392156862745098 0.5333333333333333 0.5411764705882353 1.0" />
+</material>
+    <material name="deepmagenta">
+        <color rgba="0.6274509803921569 0.00784313725490196 0.3607843137254902 1.0" />
+    </material>
+ <material name="deepbrown">
+        <color rgba="0.2549019607843137 0.00784313725490196 0.0 1.0" />
+    </material>
+    
+<link name="base_link"></link>
+<link name="chassis">
+      <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <box size="0.10 0.065 0.03" />
+            </geometry>
+            <material name="darkcyan">
+            </material>
+        </visual>
+</link>
+<joint name="chassis_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <parent link="base_link" />
+        <child link="chassis" />
+
+</joint>
+<link name="left_wheel">
+      <visual>
+            <origin xyz="-0.01 0.020 -0.01" rpy="-1.57 0.0 0.0" />
+            <geometry>
+               <cylinder radius="0.018" length="0.010" />
+            </geometry>
+            <material name="deepmagenta">
+            </material>
+        </visual>
+</link>
+<joint name="left_wheel_joint" type="fixed">
+         <origin xyz="-0.01 0.02 -0.01" rpy="0.0 0.0 0.0" />
+        <parent link="chassis" />
+        <child link="left_wheel" />
+</joint>
+<link name="right_wheel">
+      <visual>
+            <origin xyz="-0.01 -0.02 -0.01" rpy="-1.57 0.0 0.0" />
+            <geometry>
+               <cylinder radius="0.018" length="0.010" />
+            </geometry>
+            <material name="deepmagenta">
+            </material>
+        </visual>
+</link>
+<joint name="right_wheel_joint" type="fixed">
+         <origin xyz="-0.01 -0.02 -0.01" rpy="0.0 0.0 0.0" />
+        <parent link="chassis" />
+        <child link="right_wheel" />
+</joint>
+</robot>
