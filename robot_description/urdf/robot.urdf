@@ -58,4 +58,19 @@
         <parent link="chassis" />
         <child link="right_wheel" />
 </joint>
+<link name="caster_wheel">
+      <visual>
+            <origin xyz="-0.01 -0.02 -0.01" rpy="-1.57 0.0 0.0" />
+            <geometry>
+               <sphere radius="0.01" />
+            </geometry>
+            <material name="deepmagenta">
+            </material>
+        </visual>
+</link>
+<joint name="caster_wheel_joint" type="fixed">
+         <origin xyz="-0.01 -0.02 -0.01" rpy="0.0 0.0 0.0" />
+        <parent link="chassis" />
+        <child link="caster_wheel" />
+</joint>
 </robot>
